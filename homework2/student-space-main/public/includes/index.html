@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>واجب </title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-5">
+
+    <div class="container border p-4 shadow-sm" style="max-width: 500px;">
+        
+      <h2 class="mb-4" c>حاسبه</h2>
+        
+        <label>الرقم الاول</label>
+        <input type="number" id="num1" class="form-control mb-3" placeholder="أدخل الرقم الأول">
+
+        <label>الرقم الثاني:</label>
+        <input type="number" id="num2" class="form-control mb-3" placeholder="أدخل الرقم الثاني">
+
+        <label>الرقم الثالث:</label>
+        <input type="number" id="num3" class="form-control mb-3" placeholder="أدخل الرقم الثالث">
+
+        <div class="d-grid gap-2">
+            <button onclick="calculate('add')" class="btn btn-primary">جمع </button>
+            <button onclick="calculate('multi')" class="btn btn-success">ضرب </button>
+            <button onclick="calculate('max')" class="btn btn-danger">الأكبر </button>
+            <button onclick="calculate('avg')" class="btn btn-info text-white">متوسط الاعداد </button>
+        </div>
+
+        <hr>
+        <h4>القيمه <span id="result" class="text-primary">0</span></h4>
+    </div>
+
+    <script>
+        function calculate(type) {
+           
+            let a = parseFloat(document.getElementById('num1').value) || 0;
+            let b = parseFloat(document.getElementById('num2').value) || 0;
+            let c = parseFloat(document.getElementById('num3').value) || 0;
+            let res = 0;
+
+            if (type === 'add') res = a + b + c;
+            if (type === 'multi') res = a * b * c;
+            if (type === 'max') res = Math.max(a, b, c);
+            if (type === 'avg') res = (a + b + c) / 3;
+
+            
+            document.getElementById('result').innerText = res;
+        }
+    </script>
+    
+</body>
+</html>
