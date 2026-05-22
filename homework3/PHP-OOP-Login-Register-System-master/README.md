@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/28157142/README.md)
 # PHP OOP Login/Register System
 
 A basic object oriented authentication system including the ability to register a user, log in and includes features like validation, remember me, user profiles, CSRF protection, secure password salting and various helper classes to make working with sessions, cookies, input and configuration easier. 
