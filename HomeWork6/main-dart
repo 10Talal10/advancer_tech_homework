@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+            background: white;
+        }
+        .box {
+            border: 1px solid #ddd;
+            padding: 30px;
+            width: 320px;
+            border-radius: 8px;
+        }
+        h2 { font-size: 26px; font-weight: bold; }
+        label { font-size: 13px; color: #333; }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 13px;
+            color: #aaa;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 4px 0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        #result { font-size: 16px; margin-top: 15px; }
+        #screen1 { color: #3498db; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>حاسبه</h2>
+
+    <label>الرقم الاول</label>
+    <input type="text" id="number1" placeholder="أدخل الرقم الأول">
+
+    <label>الرقم الثاني:</label>
+    <input type="text" id="number2" placeholder="أدخل الرقم الثاني">
+
+    <label>الرقم الثالث:</label>
+    <input type="text" id="number3" placeholder="أدخل الرقم الثالث">
+
+    <button style="background-color:#3498db" onclick="جمع()">جمع</button>
+    <button style="background-color:#27ae60" onclick="ضرب()">ضرب</button>
+    <button style="background-color:#e74c3c" onclick="اكبر()">الأكبر</button>
+    <button style="background-color:#1abc9c" onclick="متوسط()">متوسط الاعداد</button>
+
+    <div id="result"><span id="screen1">0</span> القيمه</div>
+</div>
+
+<script>
+function جمع(){
+    var a = parseInt(document.getElementById("number1").value);
+    var b = parseInt(document.getElementById("number2").value);
+    var c = parseInt(document.getElementById("number3").value);
+    document.getElementById("screen1").innerHTML = a + b + c;
+}
+
+function ضرب(){
+    var a = parseInt(document.getElementById("number1").value);
+    var b = parseInt(document.getElementById("number2").value);
+    var c = parseInt(document.getElementById("number3").value);
+    document.getElementById("screen1").innerHTML = a * b * c;
+}
+
+function اكبر(){
+    var a = parseInt(document.getElementById("number1").value);
+    var b = parseInt(document.getElementById("number2").value);
+    var c = parseInt(document.getElementById("number3").value);
+    document.getElementById("screen1").innerHTML = Math.max(a, b, c);
+}
+
+function متوسط(){
+    var a = parseInt(document.getElementById("number1").value);
+    var b = parseInt(document.getElementById("number2").value);
+    var c = parseInt(document.getElementById("number3").value);
+    document.getElementById("screen1").innerHTML = (a + b + c) / 3;
+}
+</script>
+
+</body>
+</html>
